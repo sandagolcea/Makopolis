@@ -3,13 +3,16 @@
          Squares
 **************************/
 .square {
+    top: 0;
+    left: 0;
     height:100px;
     width:100px;
     background-color:#FF0000;
     border-radius:5px;
     background-color:#4444DD;
-    padding: 5px;
-    margin: 5px;
+    /* margins for when adding other squares */
+    /*padding: 5px;*/
+    /*margin: 5px;*/
 }
 
 /**************************
@@ -18,6 +21,6 @@
 
 #mario {
  position: absolute;
- margin: 0px;
- margin-left: 0;
+ width: 80px;
+ height: 80px;
 }
