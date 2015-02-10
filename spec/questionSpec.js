@@ -17,11 +17,11 @@ describe ("Question", function() {
   describe("defining the correct answer", function(){
 
   	it("knows if it's the right answer", function(){
-  		expect(question.answer(4)).toBe(true);
+  		expect(question.answer(4, question.question1CorrectAnswer)).toBe(true);
   	});
 
   	it("knows when the answer is wrong", function(){
-  		expect(question.answer(3)).toBe(false);
+  		expect(question.answer(3, question.question1CorrectAnswer)).toBe(false);
   	});
 
   });
