@@ -1,18 +1,19 @@
+body {
+  background-image: url('map.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 /**************************
          Squares
 **************************/
 .square {
-    top: 0;
-    left: 0;
-    height:100px;
-    width:100px;
-    background-color:#FF0000;
-    border-radius:5px;
-    background-color:#4444DD;
-    /* margins for when adding other squares */
-    /*padding: 5px;*/
-    /*margin: 5px;*/
+  height:100px;
+  width:100px;
+  background-color:#CCE6FF;
+  border-radius:5px;
+  padding: 5px;
+  margin: 5px;
 }
 
 /**************************
@@ -20,9 +21,23 @@
 **************************/
 
 #mario {
- position: absolute;
- width: 80px;
- height: 80px;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+}
+
+#sq1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  z-index: -1;
+}
+
+#sq2 {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  z-index: -1;
 }
 
 /**************************
