@@ -2,4 +2,5 @@
 $(document).ready(function(){
   // checking that jquery works!!
   console.log("Ready to go!!");
+  $('#mario').animate({top: "+=50px"}, 'slow');
 })

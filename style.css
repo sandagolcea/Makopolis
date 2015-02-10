@@ -2,10 +2,18 @@
 /**************************
          Squares
 **************************/
-#blue-square {
+.square {
     height:100px;
     width:100px;
     background-color:#FF0000;
     border-radius:5px;
     background-color:#222288;
+    padding: 5px;
+    margin: 5px;
+}
+
+#mario {
+ position: relative;
+ margin: 10px;
+ margin-left: 50%;
 }
