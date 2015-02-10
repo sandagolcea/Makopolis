@@ -1,0 +1,2 @@
+# Makopolis
+Monopoly based game
