@@ -1,0 +1,11 @@
+
+/**************************
+         Squares
+**************************/
+#blue-square {
+    height:100px;
+    width:100px;
+    background-color:#FF0000;
+    border-radius:5px;
+    background-color:#222288;
+}

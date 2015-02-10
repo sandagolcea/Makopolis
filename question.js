@@ -1,0 +1,1 @@
+// this js is for adding a question when clicking on the square
