@@ -7,13 +7,17 @@
     width:100px;
     background-color:#FF0000;
     border-radius:5px;
-    background-color:#222288;
+    background-color:#4444DD;
     padding: 5px;
     margin: 5px;
 }
 
+/**************************
+      Player Image
+**************************/
+
 #mario {
- position: relative;
- margin: 10px;
- margin-left: 50%;
+ position: absolute;
+ margin: 0px;
+ margin-left: 0;
 }
