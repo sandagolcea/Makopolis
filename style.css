@@ -24,3 +24,14 @@
  width: 80px;
  height: 80px;
 }
+
+/**************************
+      Question Box
+**************************/
+
+#qwerty {
+	display: block;
+	max-width: 20%;
+	border: solid black 1px;
+	display: none;
+}
