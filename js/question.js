@@ -11,11 +11,5 @@ Question.prototype.ask = function(question) {
 };
 
 Question.prototype.answer = function(answer, correctAnswer){
-	if (answer === correctAnswer){
-		return true
-	}
-	else {
-		return false
-	};
-
+	return (answer === correctAnswer)
 };
