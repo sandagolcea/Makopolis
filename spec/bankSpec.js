@@ -7,15 +7,19 @@ describe ("Bank", function() {
   });
 
 
-  describe("storing questions", function(){
+  describe("storing questions", function(){ß
 
-  	it("should be able to store a questions", function(){
-  		expect(bank.questionBank.length).toEqual(2);
+  	it("should be able read the question", function(){
+  		expect(bank.questions('1')).toEqual('What is 2 + 2?');
   	});
 
-  	// it("should be able read the question", function(){
-  	// 	expect(bank.questions(bank.randomQuestion());
-  	// });
+    it('should be able to provide list of answers', function() {
+      expect(bank.choices('1')).toEqual([3, 5, 4, 2863]);
+    });
+
+    it('should be able to provide THE answer', function() {
+      expect(bank.answer('1')).toEqual(4);
+    });
 
   });
 
