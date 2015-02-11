@@ -2,7 +2,6 @@ $(document).ready(function() {
 
   var question = new Question();
 
-
   // $('#question-answers').fadeIn(2000);
   $('#dice').on('click', function() {
     $('#question-answers').slideToggle("slow");
