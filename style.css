@@ -44,9 +44,25 @@ body {
       Question Box
 **************************/
 
-#qwerty {
+#question-answers {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 12em;
+  height: 12em;
+  background-color:rgba(0, 0, 0, 0.5);
+  margin-right: 5em;
 	display: block;
 	max-width: 20%;
 	border: solid black 1px;
 	display: none;
+}
+
+#dice {
+  position: fixed;
+  top: 0;
+  right: 0;  
+  width: 6em;
+  height: 6em;
+  border: solid black 3px;
 }
