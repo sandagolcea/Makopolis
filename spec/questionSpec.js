@@ -1,6 +1,6 @@
 describe ("Question", function() {
 
-  var question 
+  var question; 
 
   beforeEach(function() {
     question = new Question();
