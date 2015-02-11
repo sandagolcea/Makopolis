@@ -3,10 +3,15 @@ $(document).ready(function() {
   var question = new Question();
 
 
-  $('#qwerty').fadeIn(2000);
-  
+  // $('#question-answers').fadeIn(2000);
+  $('#dice').on('click', function() {
+    $('#question-answers').slideToggle("slow");
+  });
 
-    
+  $('[id^=answer]').on('click', function() {
+    $('#question-answers').delay(800).slideToggle("slow");
+  });
+
   $('#question-text').text(question.ask(question.question1));
 
   $('#answer1').val(question.question1Choices[0]);
@@ -16,12 +21,11 @@ $(document).ready(function() {
 
   $('.qs').on('click', function() {
     var value = parseInt($(this).attr("value"));
-    // alert(value);
     if(question.answer(value, question.question1CorrectAnswer)===true){
-      alert("You're correct")
+      $('#question-text').text("Correct!!!!")
     }
     else {
-      alert("You're wrong")
+      $('#question-text').text("Your Wrong!!!!")
     };
   });
 
