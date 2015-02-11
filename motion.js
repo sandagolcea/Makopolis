@@ -1,7 +1,7 @@
 // javascript file for adding a motion move between squares
 $(document).ready(function(){
 
-  var question = new Question();
+  var bank = new Bank();
   var mario = document.getElementById('mario').getBoundingClientRect();
 
   // putting our image in the initial position
@@ -17,9 +17,9 @@ $(document).ready(function(){
 
   $('.qs').on('click', function() {
    var diceRoll = parseInt($('#dice').text());
-   var value = parseInt($(this).attr("value"));
+   var questionChoiceOption = parseInt($(this).attr("value"));
 
-   if(question.answer(value, question.question1CorrectAnswer)===true){
+   if(bank.verifyAnswer(bank.correctAnswer(bank.randomQuestion.toString()), questionChoiceOption)){
       var start = lastVisitedSquare;
       for(var i = start; i <= diceRoll + start -1; i++) {
         $('#mario').animate(
