@@ -24,13 +24,13 @@ $(document).ready(function() {
   $('#answer4').val(question.question1Choices[3]);
 
   $('.qs').on('click', function() {
-    var value = parseInt($(this).attr("value"));
-    if(question.answer(value, question.question1CorrectAnswer)===true){
-      $('#question-text').text("Correct!!!!")
+    var questionChoiceOption = parseInt($(this).attr("value"));
+    if(question.answer(questionChoiceOption, question.question1CorrectAnswer)===true){
+      $('#question-text').text("Correct!!!!");
     }
     else {
-      $('#question-text').text("Your Wrong!!!!")
-    };
+      $('#question-text').text("Your Wrong!!!!");
+    }
   });
 
 });
