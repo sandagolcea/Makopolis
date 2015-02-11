@@ -2,31 +2,25 @@
 $(document).ready(function(){
 
   var question = new Question();
-
   var mario = document.getElementById('mario').getBoundingClientRect();
 
+  // putting our image in the initial position
   var pos = calculateIconPosition('sq1');
   var x = pos[0];
   var y = pos[1];
-
-  var lastVisitedSquare = 1;
-
-  // putting our image in the initial position
   $('#mario').hide();
   $('#mario').css("top", y);
   $('#mario').css("left", x);
   $('#mario').fadeIn("slow");
 
-  // Initial dice roll
-  var diceRoll = 3;
-  // TODO: make dice roll dynamic
+  var lastVisitedSquare = 1;
 
   $('.qs').on('click', function() {
+   var diceRoll = parseInt($('#dice').text());
    var value = parseInt($(this).attr("value"));
 
    if(question.answer(value, question.question1CorrectAnswer)===true){
       var start = lastVisitedSquare;
-      console.log(start);
       for(var i = start; i <= diceRoll + start -1; i++) {
         $('#mario').animate(
           { crSpline: $.crSpline.buildSequence([ calculateIconPosition('sq' + i), calculateIconPosition('sq' + (i + 1)) ]) },
@@ -37,7 +31,7 @@ $(document).ready(function(){
     };
   });
 
-   function calculateIconPosition(squareID) {
+  function calculateIconPosition(squareID) {
     var position = document.getElementById(squareID).getBoundingClientRect();
     var x = (position.right - (position.width/2) ) - (mario.width/2);
     var y = (position.bottom - position.height/2) - (mario.height/2);

@@ -29,7 +29,7 @@ $(document).ready(function() {
       $('#question-text').text("Correct!!!!");
     }
     else {
-      $('#question-text').text("Your Wrong!!!!");
+      $('#question-text').text("You're Wrong!!!!");
     }
   });
 
