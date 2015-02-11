@@ -75,6 +75,22 @@ body {
   z-index: -1;
 }
 
+#sq7 {
+  position: absolute;
+  background-color: #B2FF99;
+  top: 70%;
+  left: 30%;
+  z-index: -1;
+}
+
+#sq8 {
+  position: absolute;
+  background-color:#3D991F;
+  top: 70%;
+  left: 70%;
+  z-index: -1;
+}
+
 
 /**************************
       Question Box
@@ -97,7 +113,7 @@ body {
 #dice {
   position: fixed;
   top: 0;
-  right: 0;  
+  right: 0;
   width: 6em;
   height: 6em;
   border: solid black 3px;
