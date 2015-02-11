@@ -1,10 +1,15 @@
 $(document).ready(function() {
 
   var question = new Question();
+  var dice = new Dice();
 
   // $('#question-answers').fadeIn(2000);
   $('#dice').on('click', function() {
     $('#question-answers').slideToggle("slow");
+  });
+
+  $('#dice').on('click', function() {
+    $(this).text(dice.rollDice());
   });
 
   $('[id^=answer]').on('click', function() {
