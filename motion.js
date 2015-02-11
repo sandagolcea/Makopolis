@@ -9,6 +9,8 @@ $(document).ready(function(){
   var x = pos[0];
   var y = pos[1];
 
+  var lastVisitedSquare = 1;
+
   // putting our image in the initial position
   $('#mario').hide();
   $('#mario').css("top", y);
@@ -16,19 +18,21 @@ $(document).ready(function(){
   $('#mario').fadeIn("slow");
 
   // Initial dice roll
-  var diceRoll = 5;
+  var diceRoll = 3;
   // TODO: make dice roll dynamic
 
   $('.qs').on('click', function() {
    var value = parseInt($(this).attr("value"));
 
    if(question.answer(value, question.question1CorrectAnswer)===true){
-      start = 1;
-      for(var i = start; i <= diceRoll; i++) {
+      var start = lastVisitedSquare;
+      console.log(start);
+      for(var i = start; i <= diceRoll + start -1; i++) {
         $('#mario').animate(
           { crSpline: $.crSpline.buildSequence([ calculateIconPosition('sq' + i), calculateIconPosition('sq' + (i + 1)) ]) },
-          5000
+          2000
         );
+        lastVisitedSquare = i + 1;
       }
     };
   });
