@@ -5,9 +5,9 @@ $(document).ready(function(){
 
   var mario = document.getElementById('mario').getBoundingClientRect();
 
-  var position = document.getElementById('sq1').getBoundingClientRect();
-  var x = (position.right - (position.width/2) ) - (mario.width/2);
-  var y = (position.bottom - position.height/2) - (mario.height/2);
+  var pos = calculateIconPosition('sq1');
+  var x = pos[0];
+  var y = pos[1];
 
   // putting our image in the initial position
   $('#mario').hide();
@@ -20,26 +20,25 @@ $(document).ready(function(){
   // TODO: make dice roll dynamic
 
   $('.qs').on('click', function() {
-   var value = parseInt($(this).attr("value")); 
+   var value = parseInt($(this).attr("value"));
 
    if(question.answer(value, question.question1CorrectAnswer)===true){
-      start = 2;
-      stop = diceRoll+1;
-    
-      for(var i = start; i <= stop; i++) {
-
-        var position2 = document.getElementById('sq'+i).getBoundingClientRect();
-        var x2 = (position2.right - (position2.width/2) ) - (mario.width/2);
-        var y2 = (position2.bottom - position2.height/2) - (mario.height/2);
-
+      start = 1;
+      for(var i = start; i <= diceRoll; i++) {
         $('#mario').animate(
-          { crSpline: $.crSpline.buildSequence([ [x,y], [x2,y2], ]) },
+          { crSpline: $.crSpline.buildSequence([ calculateIconPosition('sq' + i), calculateIconPosition('sq' + (i + 1)) ]) },
           5000
         );
-        x=x2; y=y2;
       }
     };
   });
+
+   function calculateIconPosition(squareID) {
+    var position = document.getElementById(squareID).getBoundingClientRect();
+    var x = (position.right - (position.width/2) ) - (mario.width/2);
+    var y = (position.bottom - position.height/2) - (mario.height/2);
+    return [x,y]
+  }
 
 })
 
