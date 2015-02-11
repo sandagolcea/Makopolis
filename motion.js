@@ -23,20 +23,12 @@ $(document).ready(function(){
    var value = parseInt($(this).attr("value"));
 
    if(question.answer(value, question.question1CorrectAnswer)===true){
-      start = 2;
-      stop = diceRoll+1;
-
-      for(var i = start; i <= stop; i++) {
-
-        var pos2 = calculateIconPosition('sq' + i);
-        var x2 = pos2[0];
-        var y2 = pos2[1];
-
+      start = 1;
+      for(var i = start; i <= diceRoll; i++) {
         $('#mario').animate(
-          { crSpline: $.crSpline.buildSequence([ [x,y], [x2,y2], ]) },
+          { crSpline: $.crSpline.buildSequence([ calculateIconPosition('sq' + i), calculateIconPosition('sq' + (i + 1)) ]) },
           5000
         );
-        x=x2; y=y2;
       }
     };
   });
