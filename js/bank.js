@@ -10,13 +10,7 @@ var Bank = function(){
     '6':["What is 12 squared?", [144, 123, 111, 195], 144]
   };
 
-  // var random = this.random();
   this.randomQuestion = 1; 
-
-
-};
-
-Bank.prototype.donMeth = function(){
 
 };
 
@@ -58,14 +52,6 @@ Bank.prototype.verifyAnswer = function(actualCorrectAnswer, playersChoice){
   return (4 === playersChoice);
 };
 
-// Bank.prototype.random = function() {
-//   return Math.floor((Math.random() * 6) + 1);
-// };
-
-// Bank.prototype.randomNumber = function(){
-//   this.randomQuestion;
-// };
-
-// Bank.prototype.verifyAnswer = function(answer, correctAnswer){
-//   return (answer === correctAnswer);
-// };
+Bank.prototype.randomChecker = function() {
+  this.randomQuestion = Math.floor((Math.random() * 6) + 1);
+};
