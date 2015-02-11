@@ -2,20 +2,16 @@ $(document).ready(function() {
 
   var dice = new Dice();
   var bank = new Bank();
+  $(bank.randomChecker());
 
-  // $('#question-answers').fadeIn(2000);
   $('#dice').on('click', function() {
     $('#question-answers').slideToggle("slow");
   });
 
   $('#dice').on('click', function() {
     $(this).text(dice.rollDice());
-    // $(bank.randomNumber());
+    $(bank.randomChecker());
   });
-
-  // $('#answer').on('click', function() {
-  //   $(this).text(bank.randomQuestion);
-  // });
 
   $('[id^=answer]').on('click', function() {
     $('#question-answers').delay(800).slideToggle("slow");
