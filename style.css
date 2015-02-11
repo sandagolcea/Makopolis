@@ -5,18 +5,6 @@ body {
 }
 
 /**************************
-         Squares
-**************************/
-.square {
-  height:100px;
-  width:100px;
-  background-color:#CCE6FF;
-  border-radius:5px;
-  padding: 5px;
-  margin: 5px;
-}
-
-/**************************
       Player Image
 **************************/
 
@@ -26,8 +14,22 @@ body {
   height: 80px;
 }
 
+/**************************
+        Squares
+**************************/
+
+.square {
+  height:100px;
+  width:100px;
+/*  background-color:#CCE6FF;*/
+  border-radius:5px;
+  padding: 5px;
+  margin: 5px;
+}
+
 #sq1 {
   position: absolute;
+  background-color:  #9999FF;
   top: 20%;
   left: 10%;
   z-index: -1;
@@ -35,10 +37,44 @@ body {
 
 #sq2 {
   position: absolute;
+  background-color:#6666FF;
   top: 30%;
   left: 40%;
   z-index: -1;
 }
+
+#sq3 {
+  position: absolute;
+  background-color:#3333FF;
+  top: 20%;
+  left: 70%;
+  z-index: -1;
+}
+
+#sq4 {
+  position: absolute;
+  background-color:#1919FF;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+}
+
+#sq5 {
+  position: absolute;
+  background-color:#0000FF;
+  top: 40%;
+  left: 30%;
+  z-index: -1;
+}
+
+#sq6 {
+  position: absolute;
+  background-color:#0000CC;
+  top: 20%;
+  left: 20%;
+  z-index: -1;
+}
+
 
 /**************************
       Question Box

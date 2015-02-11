@@ -9,27 +9,35 @@ $(document).ready(function(){
   var x = (position.right - (position.width/2) ) - (mario.width/2);
   var y = (position.bottom - position.height/2) - (mario.height/2);
 
+  // putting our image in the initial position
   $('#mario').hide();
   $('#mario').css("top", y);
   $('#mario').css("left", x);
   $('#mario').fadeIn("slow");
 
-  var position2 = document.getElementById('sq2').getBoundingClientRect();
-  var x2 = (position2.right - (position2.width/2) ) - (mario.width/2);
-  var y2 = (position2.bottom - position2.height/2) - (mario.height/2);
-
-  // Positioning testing purposes:
-  // console.log("right: "+ position.right+" width: " + position.width+" mario width: "+ mario.width);
-  // console.log("x : " + x);
-  // console.log("y : " + y);
+  // Initial dice roll
+  var diceRoll = 5;
+  // TODO: make dice roll dynamic
 
   $('.qs').on('click', function() {
-    var value = parseInt($(this).attr("value"));
-    if(question.answer(value, question.question1CorrectAnswer)===true){
-      $('#mario').animate(
+   var value = parseInt($(this).attr("value")); 
+
+   if(question.answer(value, question.question1CorrectAnswer)===true){
+      start = 2;
+      stop = diceRoll+1;
+    
+      for(var i = start; i <= stop; i++) {
+
+        var position2 = document.getElementById('sq'+i).getBoundingClientRect();
+        var x2 = (position2.right - (position2.width/2) ) - (mario.width/2);
+        var y2 = (position2.bottom - position2.height/2) - (mario.height/2);
+
+        $('#mario').animate(
           { crSpline: $.crSpline.buildSequence([ [x,y], [x2,y2], ]) },
           5000
-      );
+        );
+        x=x2; y=y2;
+      }
     };
   });
 
