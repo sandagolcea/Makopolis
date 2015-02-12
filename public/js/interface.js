@@ -11,26 +11,24 @@ $(document).ready(function() {
   $('#dice').on('click', function() {
     $(this).text(dice.rollDice());
     $(bank.randomChecker());
-    $('#question-text').text(bank.questions(bank.randomQuestion)).toString();
-    $('#answer1').val(bank.choice1(bank.randomQuestion)).toString();
-    $('#answer2').val(bank.choice2(bank.randomQuestion)).toString();
-    $('#answer3').val(bank.choice3(bank.randomQuestion)).toString();
-    $('#answer4').val(bank.choice4(bank.randomQuestion)).toString();
+    $('#question-text').text(bank.questions(1));
+    $('#answer1').val(bank.choice1(1));
+    $('#answer2').val(bank.choice2(1));
+    $('#answer3').val(bank.choice3(1));
+    $('#answer4').val(bank.choice4(1));
   });
 
-  $('[id^=answer]').on('click', function() {
-    $('#question-answers').delay(800).slideToggle("slow");
-  });
-
-  $('#question-text').text(bank.questions(bank.randomQuestion)).toString();
+  $('#question-text').text(bank.questions(1));
 
   $('.qs').on('click', function() {
-    var questionChoiceOption = parseInt($(this).attr("value"));
-    if(bank.verifyAnswer(bank.randomQuestion.toString(), questionChoiceOption) === true){
+    var questionChoiceOption =($(this).attr("value"));
+    if(bank.verifyAnswer(1, questionChoiceOption) == true){
       $('#question-text').text("Correct!!!!");
+      $('#question-answers').delay(1000).slideToggle("slow");
     }
     else {
       $('#question-text').text("You're Wrong!!!!");
+      $('#question-answers').delay(1000).slideToggle("slow");
     }
   });
 
@@ -50,19 +48,22 @@ $(document).ready(function() {
 
    $('.qs').on('click', function() {
    var diceRoll = parseInt($('#dice').text());
-   var questionChoiceOption = parseInt($(this).attr("value"));
+   var questionChoiceOption = ($(this).attr("value"));
 
-   if(bank.verifyAnswer(bank.randomQuestion.toString(), questionChoiceOption) === true){
+   if(bank.verifyAnswer(1, questionChoiceOption) == true){
       var start = lastVisitedSquare;
       for(var i = start; i <= diceRoll + start -1; i++) {
         $('#mario').animate(
           { crSpline: $.crSpline.buildSequence([ calculateIconPosition('sq' + i), calculateIconPosition('sq' + (i + 1)) ]) },
-          2000
+          500
         );
         lastVisitedSquare = i + 1;
       }
+      if(lastVisitedSquare >= $('.square').length) {
+       alert("You have won the game! Congratualtions, your life is now complete!")
     };
-    bank.deleteQuestion(bank.randomQuestion.toString());
+  };
+    bank.deleteQuestion(1);
   });
   //*** End of motion code ***
   
