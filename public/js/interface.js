@@ -40,7 +40,6 @@ $(document).ready(function() {
 
     if(bank.verifyAnswer(1, questionChoiceOption) == true){
       player.move(diceRoll);
-      player.checkWinner();
     }
 
     bank.deleteQuestion(1);

@@ -15,17 +15,21 @@ var Player = function(playerID){
 
  
  Player.prototype.move = function(diceRoll) {
+  console.log("Last visited square: "+this.lastVisitedSquare);
   var start = this.lastVisitedSquare;
   var end = diceRoll + start - 1;
   var last = $('.square').length;
   end = end > last ? last : end;
 
   for(var i = start; i <= end; i++) {
+    var that = this;
     $(this.id).animate(
       { crSpline: $.crSpline.buildSequence([ this.calculateIconPosition('sq' + i), this.calculateIconPosition('sq' + (i + 1)) ]) },
-    500
+    500, function(){
+        that.lastVisitedSquare++;
+        that.checkWinner();
+      }
     );
-    this.lastVisitedSquare = i + 1;
    };
  };
 
