@@ -28,7 +28,7 @@ $(document).ready(function() {
 
   $('.qs').on('click', function() {
     var questionChoiceOption = parseInt($(this).attr("value"));
-    if(bank.verifyAnswer(bank.randomQuestion.toString()), questionChoiceOption){
+    if(bank.verifyAnswer(bank.randomQuestion.toString()), questionChoiceOption === true){
       $('#question-text').text("Correct!!!!");
     }
     else {
