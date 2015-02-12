@@ -178,16 +178,19 @@ body {
 
 #question-answers {
   position: fixed;
-  bottom: 0;
+  bottom: 6.5em;
   right: 0;
-  width: 12em;
-  height: 12em;
-  background-color:rgba(0, 0, 0, 0.5);
-  margin-right: 5em;
+  width: 18em;
+  height: 24em;
+  background-color: #ffffc2;
+  /*margin-right: 5em;*/
 	display: block;
 	max-width: 20%;
-	border: solid black 1px;
+	border: solid #99EBD3 1.2em;
+  border-radius: 2em;
 	display: none;
+  /*text-align: center;*/
+  list-style: none;
 }
 
 #dice-container {
