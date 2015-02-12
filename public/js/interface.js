@@ -6,6 +6,7 @@ $(document).ready(function() {
 
   $('#dice').on('click', function() {
     $('#question-answers').slideToggle("slow");
+    $('#question-answers').delay(20000).slideToggle("slow");
   });
 
   $('#dice').on('click', function() {
