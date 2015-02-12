@@ -1,7 +1,8 @@
 body {
-  background-image: url('map.png');
+  background-image: url('mapStreet.svg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 80%;
+  background-color: #66A3FF;
 }
 
 /**************************
@@ -19,8 +20,8 @@ body {
 **************************/
 
 .square {
-  height:100px;
-  width:100px;
+  height:80px;
+  width:80px;
 /*  background-color:#CCE6FF;*/
   border-radius:5px;
   padding: 5px;
@@ -29,68 +30,148 @@ body {
 
 #sq1 {
   position: absolute;
-  background-color:  #9999FF;
-  top: 20%;
-  left: 10%;
+  background-color:  #74FF70;
+  top: 82%;
+  left: 0%;
   z-index: -1;
 }
 
 #sq2 {
   position: absolute;
-  background-color:#6666FF;
-  top: 30%;
-  left: 40%;
+  background-color:#74FF70;
+  top: 82%;
+  left: 10%;
   z-index: -1;
 }
 
 #sq3 {
   position: absolute;
-  background-color:#3333FF;
-  top: 20%;
-  left: 70%;
+  background-color:#74FF70;
+  top: 82%;
+  left: 20%;
   z-index: -1;
 }
 
 #sq4 {
   position: absolute;
-  background-color:#1919FF;
-  top: 50%;
-  left: 50%;
+  background-color:#74FF70;
+  top: 82%;
+  left: 30%;
   z-index: -1;
 }
 
 #sq5 {
   position: absolute;
-  background-color:#0000FF;
-  top: 40%;
-  left: 30%;
+  background-color:#74FF70;
+  top: 82%;
+  left: 40%;
   z-index: -1;
 }
 
 #sq6 {
   position: absolute;
-  background-color:#0000CC;
-  top: 20%;
-  left: 20%;
+  background-color:#74FF70;
+  top: 82%;
+  left: 50%;
   z-index: -1;
 }
 
 #sq7 {
   position: absolute;
-  background-color: #B2FF99;
-  top: 70%;
-  left: 30%;
+  background-color: #74FF70;
+  top: 77%;
+  left: 60%;
   z-index: -1;
 }
 
 #sq8 {
   position: absolute;
-  background-color:#3D991F;
+  background-color:#74FF70;
   top: 70%;
   left: 70%;
   z-index: -1;
 }
 
+
+#sq9 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 50%;
+  left: 65%;
+  z-index: -1;
+}
+
+#sq10 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 40%;
+  left: 50%;
+  z-index: -1;
+}
+
+#sq11 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 40%;
+  left: 40%;
+  z-index: -1;
+}
+
+#sq12 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 39%;
+  left: 30%;
+  z-index: -1;
+}
+
+#sq13 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 38%;
+  left: 20%;
+  z-index: -1;
+}
+
+#sq14 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 37%;
+  left: 10%;
+  z-index: -1;
+}
+
+#sq15 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 30%;
+  left: 1%;
+  z-index: -1;
+}
+
+#sq16 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 7%;
+  left: 10%;
+  z-index: -1;
+}
+
+#sq17 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 5%;
+  left: 25%;
+  z-index: -1;
+}
+
+#sq18 {
+  position: absolute;
+  background-color:#74FF70;
+  top: 3%;
+  left: 40%;
+  z-index: -1;
+}
 
 /**************************
       Question Box
