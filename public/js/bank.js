@@ -3,12 +3,12 @@ var Bank = function(){
   this.questionBank = [
 
     ["What is 2 + 2?", [3, 5, 4, 2863], 4],
-    ["What is 2 + 3?", [2, 3, 5, 8], 5],
-    ["What is 1 + 1?", [2, 3, 4, 5], 2],
-    ["what is 5 + 5?", [4, 7, 3, 10], 10],
-    ["What is 72 + 127?", [18, 199, 197, 198], 199],
-    ["What is 12 squared?", [144, 123, 111, 195], 144], 
-    ["Array = ['Hello', 'Goodbye', 'Program', 'Pair'] What would be the way to order this array alphabetically?", ['array.sort_do{|array| array.sort}', 'array.sort', 'array.each do{|word| word.sort}', 'array.alphabet' ], 'array.sort' ],
+    // ["What is 2 + 3?", [2, 3, 5, 8], 5],
+    // ["What is 1 + 1?", [2, 3, 4, 5], 2],
+    // ["what is 5 + 5?", [4, 7, 3, 10], 10],
+    // ["What is 72 + 127?", [18, 199, 197, 198], 199],
+    // ["What is 12 squared?", [144, 123, 111, 195], 144], 
+    // ["Array = ['Hello', 'Goodbye', 'Program', 'Pair'] What would be the way to order this array alphabetically?", ['array.sort_do{|array| array.sort}', 'array.sort', 'array.each do{|word| word.sort}', 'array.alphabet'], 'array.sort' ],
     ["Array = [‘Jon’, ‘Bob’, ‘Dave’, ‘Steve’] What would be the way to reverse every element in the array?" [ 'array.map{|name| name.reverse}', 'array.each do{|name| name.reverse}', 'array.reverse', 'array.select{|name| name.reverse}'], 'array.map{|name| name.reverse}'],
     ["Array = [’12’, ‘6’, ’15’, ’48’] What would be the way to calculate the average of all the elements?", ['array.inject', 'array.select{|number| number + number}/array', '(array.inject(:+)/array.length.to_f).round', '(array.join)/array'], '(array.inject(:+)/array.length.to_f).round' ],
     ["What would you use to enclose an array?", ['\{ \}', '\* \*', '\[ \]', '\| \|'], '\[ \]'],
