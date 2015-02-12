@@ -22,7 +22,6 @@ body {
 .square {
   height:80px;
   width:80px;
-/*  background-color:#CCE6FF;*/
   border-radius:5px;
   padding: 5px;
   margin: 5px;
@@ -191,11 +190,21 @@ body {
 	display: none;
 }
 
-#dice {
+#dice-container {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 2em;
+  right: 2em;
   width: 6em;
   height: 6em;
-  border: solid black 3px;
+  line-height: 6em;
+  background-color: #D63333;
+  border: solid #D63333 3px;
+  border-radius: 2em;
+}
+
+#dice {
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
 }
