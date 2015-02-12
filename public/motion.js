@@ -19,7 +19,7 @@ $(document).ready(function(){
    var diceRoll = parseInt($('#dice').text());
    var questionChoiceOption = parseInt($(this).attr("value"));
 
-   if(bank.verifyAnswer(bank.correctAnswer(bank.randomQuestion.toString()), questionChoiceOption)){
+   if(bank.verifyAnswer(bank.randomQuestion.toString()), questionChoiceOption){
       var start = lastVisitedSquare;
       for(var i = start; i <= diceRoll + start -1; i++) {
         $('#mario').animate(

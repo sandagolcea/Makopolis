@@ -48,8 +48,8 @@ Bank.prototype.correctAnswer = function(questionNumber){
   return questionArray[2];
 };
 
-Bank.prototype.verifyAnswer = function(actualCorrectAnswer, playersChoice){
-  return (4 === playersChoice);
+Bank.prototype.verifyAnswer = function(questionNumber, playersChoice){
+  return (this.correctAnswer(questionNumber) === playersChoice);
 };
 
 Bank.prototype.randomChecker = function() {
