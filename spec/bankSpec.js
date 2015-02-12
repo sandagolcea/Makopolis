@@ -1,6 +1,6 @@
 describe ("Bank", function() {
 
-  var bank; 
+  var bank;
 
   beforeEach(function() {
     bank = new Bank();
@@ -10,7 +10,7 @@ describe ("Bank", function() {
   describe("storing questions", function(){
 
     it("should be able read the question", function(){
-      expect(bank.questions('1')).toEqual('What is 2 + 2?');
+      expect(bank.questions(0)).toEqual('What is 2 + 2?');
     });
 
     it('should be able to provide list of answers', function() {
@@ -24,17 +24,16 @@ describe ("Bank", function() {
     });
 
     it('should know when the player gets the correct answer', function() {
-      expect(bank.verifyAnswer('1', 4)).toBe(true);
+      expect(bank.verifyAnswer(0, 4)).toBe(true);
     });
 
     it('should know when the player gets the wrong answer', function(){
-      expect(bank.verifyAnswer('1', 5)).toBe(false);
+      expect(bank.verifyAnswer(0, 5)).toBe(false);
     });
 
     it('cannot display same question twice', function() {
-      bank.questionUsed = ['1'];
-      bank.questions('1');
-      expect(questionArray[0]).toEqual('2');
+      bank.deleteQuestion(2);
+      expect(bank.questionBank.length).toEqual(5);
     });
 
   });

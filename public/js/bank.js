@@ -1,16 +1,16 @@
 var Bank = function(){
 
-  this.questionBank = {
+  this.questionBank = [
 
-    '1':["What is 2 + 2?", [3, 5, 4, 2863], 4],
-    '2':["What is 2 + 3?", [2, 3, 5, 8], 5],
-    '3':["What is 1 + 1?", [2, 3, 4, 5], 2],
-    '4':["what is 5 + 5?", [4, 7, 3, 10], 10],
-    '5':["What is 72 + 127?", [18, 199, 197, 198], 199],
-    '6':["What is 12 squared?", [144, 123, 111, 195], 144]
-  };
+    ["What is 2 + 2?", [3, 5, 4, 2863], 4],
+    ["What is 2 + 3?", [2, 3, 5, 8], 5],
+    ["What is 1 + 1?", [2, 3, 4, 5], 2],
+    ["what is 5 + 5?", [4, 7, 3, 10], 10],
+    ["What is 72 + 127?", [18, 199, 197, 198], 199],
+    ["What is 12 squared?", [144, 123, 111, 195], 144]
+  ];
 
-  this.randomQuestion = 1; 
+  this.randomQuestion = 1;
 
 };
 
@@ -52,6 +52,10 @@ Bank.prototype.verifyAnswer = function(questionNumber, playersChoice){
   return (this.correctAnswer(questionNumber) === playersChoice);
 };
 
+Bank.prototype.deleteQuestion = function(questionNumber) {
+  this.questionBank.splice(questionNumber, 1);
+};
+
 Bank.prototype.randomChecker = function() {
-  this.randomQuestion = Math.floor((Math.random() * 6) + 1);
+  this.randomQuestion = Math.floor((Math.random() * 3));
 };

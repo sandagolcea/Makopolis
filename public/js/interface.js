@@ -11,7 +11,7 @@ $(document).ready(function() {
   $('#dice').on('click', function() {
     $(this).text(dice.rollDice());
     $(bank.randomChecker());
-    $('#question-text').text(bank.questions(bank.randomQuestion)).toString(); 
+    $('#question-text').text(bank.questions(bank.randomQuestion)).toString();
     $('#answer1').val(bank.choice1(bank.randomQuestion)).toString();
     $('#answer2').val(bank.choice2(bank.randomQuestion)).toString();
     $('#answer3').val(bank.choice3(bank.randomQuestion)).toString();
@@ -23,8 +23,6 @@ $(document).ready(function() {
   });
 
   $('#question-text').text(bank.questions(bank.randomQuestion)).toString();
-
- 
 
   $('.qs').on('click', function() {
     var questionChoiceOption = parseInt($(this).attr("value"));
@@ -63,6 +61,7 @@ $(document).ready(function() {
         lastVisitedSquare = i + 1;
       }
     };
+    bank.deleteQuestion(bank.randomQuestion.toString());
   });
 
   function calculateIconPosition(squareID) {
