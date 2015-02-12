@@ -1,31 +1,32 @@
 $(document).ready(function() {
 
-  var question = new Question();
   var dice = new Dice();
+  var bank = new Bank();
+  $(bank.randomChecker());
 
-  // $('#question-answers').fadeIn(2000);
   $('#dice').on('click', function() {
     $('#question-answers').slideToggle("slow");
   });
 
   $('#dice').on('click', function() {
     $(this).text(dice.rollDice());
+    $(bank.randomChecker());
   });
 
   $('[id^=answer]').on('click', function() {
     $('#question-answers').delay(800).slideToggle("slow");
   });
 
-  $('#question-text').text(question.ask(question.question1));
+  $('#question-text').text(bank.questions(bank.randomQuestion)).toString();
 
-  $('#answer1').val(question.question1Choices[0]);
-  $('#answer2').val(question.question1Choices[1]);
-  $('#answer3').val(question.question1Choices[2]);
-  $('#answer4').val(question.question1Choices[3]);
+  $('#answer1').val(bank.choice1(bank.randomQuestion)).toString();
+  $('#answer2').val(bank.choice2(bank.randomQuestion)).toString();
+  $('#answer3').val(bank.choice3(bank.randomQuestion)).toString();
+  $('#answer4').val(bank.choice4(bank.randomQuestion)).toString();
 
   $('.qs').on('click', function() {
     var questionChoiceOption = parseInt($(this).attr("value"));
-    if(question.answer(questionChoiceOption, question.question1CorrectAnswer)===true){
+    if(bank.verifyAnswer(bank.correctAnswer(bank.randomQuestion.toString()), questionChoiceOption)){
       $('#question-text').text("Correct!!!!");
     }
     else {
