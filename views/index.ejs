@@ -46,7 +46,10 @@
   <!-- Added socket js file and script for connecting (only) locally-->
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    var socket = io.connect('https://makopolis.herokuapp.com:443');
+    // heroku:
+    // var socket = io.connect('https://makopolis.herokuapp.com:443');
+    // not heroku:
+    var socket = io.connect('http://localhost:5000');
   </script>
   <script type="text/javascript" src="../js/dice.js"></script>
   <script type="text/javascript" src="../js/bank.js"></script>
