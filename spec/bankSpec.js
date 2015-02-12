@@ -31,6 +31,12 @@ describe ("Bank", function() {
       expect(bank.verifyAnswer('1', 5)).toBe(false);
     });
 
+    it('cannot display same question twice', function() {
+      bank.questionUsed = ['1'];
+      bank.questions('1');
+      expect(questionArray[0]).toEqual('2');
+    });
+
   });
 
 });
