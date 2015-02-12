@@ -12,8 +12,10 @@ app.get('/', function(request, response){
   response.render('index');
 });
 
-io.on('connection', function(client) {
+io.on('connection', function(socket) {
   console.log('Client connected');
+  io.emit('newPlayer',{data: socket.id});
+  socket.emit('playerID', {data: socket.id});
 })
 
 server.listen(port, function(){

@@ -48,13 +48,22 @@
   <!-- Added socket js file and script for connecting (only) locally-->
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    // heroku:
-    // var socket = io.connect('https://makopolis.herokuapp.com:443');
-    // not heroku:
     var socket = io();
+    var playerID;
+    
+    socket.on('newPlayer', function (data) {
+      console.log(data);
+    });
+
+    socket.on('playerID', function(obj) {
+      console.log("I am: "+obj.data);
+      playerID = obj.data;
+    });
+
   </script>
   <script type="text/javascript" src="../js/dice.js"></script>
   <script type="text/javascript" src="../js/bank.js"></script>
+  <script type="text/javascript" src="../js/player.js"></script> 
   <script type="text/javascript" src="../js/interface.js"></script> 
 
 </body>
