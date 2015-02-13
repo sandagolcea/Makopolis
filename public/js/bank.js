@@ -20,7 +20,8 @@ var Bank = function(){
    ["How would you remove instances of nil and false from an array?", ['array.remove(nil, false)', 'array.delete(nil, false)', 'array.select(String)', 'array.grep(String)'], 'array.grep(String)'], 
    ["How do you reverse an array?", ['array.each { |word| word.reverse! }', 'array.map { |word| word.reverse! }', 'array.select { |word| word.reverse! }', 'array.inject { |word| word.reverse! }'], 'array.each { |word| word.reverse! }'],
    ["Which option will return true?", ['(true && false) || (false && false)', '(true && false) && (false && false)', '(true && true) && (false && true)', '(true && true) && (false || true)'], '(true && true) && (false || true)'], 
-   ["Which option will return false?", ['3 < 4 && 5 < 2', '3 <= 4 && 5 > 2', '3 == 4 || 5 > 2', '3 == 4 || 2 == 2'], '3 < 4 && 5 < 2']
+   ["Which option will return false?", ['3 < 4 && 5 < 2', '3 <= 4 && 5 > 2', '3 == 4 || 5 > 2', '3 == 4 || 2 == 2'], '3 < 4 && 5 < 2'],
+   ["Which option will return true?", ['100 > 1 && 199 < 299', '100 < 1 && 199 < 299', '100 < 1 || 199 > 299', '213 > 314 || 87 < 63'], '100 > 1 && 199 < 299']
 ];
 
  this.randomQuestion = 1;
