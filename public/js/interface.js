@@ -6,9 +6,6 @@ $(document).ready(function() {
 
  $('#dice').on('click', function() {
    $('#question-answers').slideToggle("slow");
- });
-
- $('#dice').on('click', function() {
    $(this).text(dice.rollDice());
    $(bank.randomChecker());
    $('#question-text').text(bank.questions(1));
@@ -22,7 +19,7 @@ $(document).ready(function() {
 
  $('.qs').on('click', function() {
    var questionChoiceOption =($(this).attr("value"));
-   if(bank.verifyAnswer(1, questionChoiceOption) == true){
+   if(bank.verifyAnswer(1, questionChoiceOption) === true){
      $('#question-text').text("Correct!!!!");
      $('#question-answers').delay(1000).slideToggle("slow");
    }
@@ -38,7 +35,7 @@ $(document).ready(function() {
     var diceRoll = parseInt($('#dice').text());
     var questionChoiceOption = ($(this).attr("value"));
 
-    if(bank.verifyAnswer(1, questionChoiceOption) == true){
+    if(bank.verifyAnswer(1, questionChoiceOption) === true){
       player.move(diceRoll);
     }
 
