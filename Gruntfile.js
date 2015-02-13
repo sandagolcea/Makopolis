@@ -58,7 +58,7 @@ module.exports = function(grunt) {
         },
   
    jasmine_node: {
-     all: ['spec/']
+     all: ['spec/*.js']
    },
    jshint: {
      all: ['Gruntfile.js', 'spec/**/*.js', 'js/**/*.js']
@@ -78,6 +78,7 @@ module.exports = function(grunt) {
  grunt.loadNpmTasks('grunt-mocha-casperjs');
  grunt.loadNpmTasks('grunt-express-server');
 
- grunt.registerTask('default', ['express:test', 'mocha_casperjs']);
+ grunt.registerTask('default', ['express:test', 'jasmine', 'mocha_casperjs']);
  grunt.registerTask('hint', ['jshint']);
+ grunt.registerTask('jasmine-node', ['jasmine_node']);
 };
