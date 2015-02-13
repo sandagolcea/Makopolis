@@ -63,7 +63,7 @@ Bank.prototype.correctAnswer = function(questionNumber){
 };
 
 Bank.prototype.verifyAnswer = function(questionNumber, playersChoice){
- return (this.correctAnswer(questionNumber) == playersChoice);
+  return (this.correctAnswer(questionNumber) == playersChoice);
 };
 
 Bank.prototype.deleteQuestion = function(questionNumber) {
