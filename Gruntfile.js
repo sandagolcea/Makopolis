@@ -40,7 +40,14 @@ module.exports = function(grunt) {
    watch: {
      all: ['<%= jshint.files %>'],
      tasks: ['jshint']
-   }
+   },
+   jasmine: {
+    coverage : {
+    output : 'junit/coverage/',
+    reportType : 'cobertura',
+    excludes : ['lib/**/*.js']    
+      }
+    }
  });
 
 
@@ -49,6 +56,7 @@ module.exports = function(grunt) {
  grunt.loadNpmTasks('grunt-jasmine-node');
  grunt.loadNpmTasks('grunt-mocha-casperjs');
  grunt.loadNpmTasks('grunt-express-server');
+ grunt.loadNpmTasks('grunt-jasmine-coverage');
 
  grunt.registerTask('default', ['jshint', 'express', 'mocha_casperjs']);
  grunt.registerTask('hint', ['jshint']);
