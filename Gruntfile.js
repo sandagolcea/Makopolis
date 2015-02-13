@@ -41,10 +41,14 @@ module.exports = function(grunt) {
      tasks: ['jshint']
    }
  });
- 
+
 
 
  grunt.loadNpmTasks('grunt-contrib-jshint');
- grunt.registerTask('default', ['jshint']);
+ grunt.loadNpmTasks('grunt-jasmine-node');
+ grunt.loadNpmTasks('grunt-mocha-casperjs');
+ grunt.loadNpmTasks('grunt-express-server');
+
+ grunt.registerTask('default', ['jshint', 'express', 'mocha_casperjs']);
  grunt.registerTask('hint', ['jshint']);
 };
