@@ -35,7 +35,9 @@ var Player = function(playerID){
 
  Player.prototype.checkWinner = function() {
   if ( this.lastVisitedSquare >= $('.square').length )  {
-    alert("You have won the game! Congratulations, your life is now complete!");
+    // alert("You have won the game! Congratulations, your life is now complete!");
+    $('#endBanner').animate(
+      { crSpline: $.crSpline.buildSequence([ [1200,400], [400,400] ]) }, 5000);
   };
  };
 

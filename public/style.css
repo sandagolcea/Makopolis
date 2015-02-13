@@ -15,6 +15,14 @@ body {
   height: 80px;
 }
 
+#endBanner {
+  position: absolute;
+  top: -400px;
+  left: -400px;
+  width: 400px;
+  height: 400px;
+}
+
 /**************************
         Squares
 **************************/
@@ -161,6 +169,26 @@ h3 {
   z-index: -1;
 }
 
+#sq19 {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  z-index: -1;
+}
+
+#sq20 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  z-index: -1;
+}
+
+#sq21 {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  z-index: -1;
+}
 /**************************
       Question Box
 **************************/
