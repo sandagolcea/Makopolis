@@ -10,7 +10,7 @@ describe ("Bank", function() {
   describe("storing questions", function(){
 
     it("should be able read the question", function(){
-      expect(bank.questions(0)).toEqual('What is 2 + 2?');
+      expect(bank.questions(1)).toEqual('Array = [’12’, ‘6’, ’15’, ’48’] What would be the way to calculate the average of all the elements?');
     });
 
     it('should be able to provide list of answers', function() {
@@ -24,7 +24,7 @@ describe ("Bank", function() {
     });
 
     it('should know when the player gets the correct answer', function() {
-      expect(bank.verifyAnswer(0, 4)).toBe(true);
+      expect(bank.verifyAnswer(1, '(array.inject(:+)/array.length.to_f).round')).toBe(true);
     });
 
     it('should know when the player gets the wrong answer', function(){
@@ -33,7 +33,7 @@ describe ("Bank", function() {
 
     it('cannot display same question twice', function() {
       bank.deleteQuestion(2);
-      expect(bank.questionBank.length).toEqual(5);
+      expect(bank.questionBank.length).toEqual(8);
     });
 
   });
