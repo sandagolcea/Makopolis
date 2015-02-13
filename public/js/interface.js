@@ -64,16 +64,8 @@ $(document).ready(function() {
        alert("You have won the game! Congratualtions, your life is now complete!")
     };
   };
+
     bank.deleteQuestion(1);
   });
-  //*** End of motion code ***
-  
-  function calculateIconPosition(squareID) {
-    var position = document.getElementById(squareID).getBoundingClientRect();
-    var x = (position.right - (position.width/2) ) - (mario.width/2);
-    var y = (position.bottom - position.height/2) - (mario.height/2);
-    return [x,y]
-  }
-
 
 });

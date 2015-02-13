@@ -30,13 +30,13 @@
   <div class="square" id="sq18"></div>
   <!-- End of squares -->
 
-  <div id="question-answers">
-    <h3 id="question-text"></h3>
-    <input type="button" class="qs" id="answer1" name="a1" value="">
-    <input type="button" class="qs" id="answer2" name="a2" value="">
-    <input type="button" class="qs" id="answer3" name="a3" value="">
-    <input type="button" class="qs" id="answer4" name="a4" value="">
-  </div>
+    <ul id="question-answers">
+      <h3 id="question-text"></h3>
+        <li><input type="button" class="qs" id="answer1" name="a1" value=""></li>
+        <li><input type="button" class="qs" id="answer2" name="a2" value=""></li>
+        <li><input type="button" class="qs" id="answer3" name="a3" value=""></li>
+        <li><input type="button" class="qs" id="answer4" name="a4" value=""></li>
+    </ul>
 
   <div id="dice-container">
     <div id="dice">Dice</div>
@@ -48,13 +48,22 @@
   <!-- Added socket js file and script for connecting (only) locally-->
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    // heroku:
-    // var socket = io.connect('https://makopolis.herokuapp.com:443');
-    // not heroku:
     var socket = io();
+    var playerID;
+    
+    socket.on('newPlayer', function (data) {
+      console.log(data);
+    });
+
+    socket.on('playerID', function(obj) {
+      console.log("I am: "+obj.data);
+      playerID = obj.data;
+    });
+
   </script>
   <script type="text/javascript" src="../js/dice.js"></script>
   <script type="text/javascript" src="../js/bank.js"></script>
+  <script type="text/javascript" src="../js/player.js"></script> 
   <script type="text/javascript" src="../js/interface.js"></script> 
 
 </body>
