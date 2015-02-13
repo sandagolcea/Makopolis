@@ -13,14 +13,29 @@ describe ("Bank", function() {
       expect(bank.questions(1)).toEqual('Array = [’12’, ‘6’, ’15’, ’48’] What would be the way to calculate the average of all the elements?');
     });
 
-    it('should be able to provide list of answers', function() {
-      spyOn(bank, 'choice1').and.returnValue(['array.inject', 'array.select{|number| number + number}/array', '(array.inject(:+)/array.length.to_f).round', '(array.join)/array']);
-      expect(bank.choice1('1')).toEqual(['array.inject', 'array.select{|number| number + number}/array', '(array.inject(:+)/array.length.to_f).round', '(array.join)/array']);
+    it('should be able to provide the first answer choice', function() {
+      bank.questions(1);
+      expect(bank.choice1(1)).toEqual('array.inject');
+    });
+
+    it('should be able to provide the second answer choice', function() {
+      bank.questions(1);
+      expect(bank.choice2(1)).toEqual('array.select{|number| number + number}/array');
+    });
+
+    it('should be able to provide the third answer choice', function() {
+      bank.questions(1);
+      expect(bank.choice3(1)).toEqual('(array.inject(:+)/array.length.to_f).round');
+    });
+
+    it('should be able to provide the fourth answer choice', function() {
+      bank.questions(1);
+      expect(bank.choice4(1)).toEqual('(array.join)/array');
     });
 
     it('should be able to provide THE answer', function() {
-      spyOn(bank, 'correctAnswer').and.returnValue('array.inject(:+)/array.length.to_f).round');
-      expect(bank.correctAnswer('1')).toEqual('array.inject(:+)/array.length.to_f).round');
+      bank.questions(1);
+      expect(bank.correctAnswer(1)).toEqual('(array.inject(:+)/array.length.to_f).round');
     });
 
     it('should know when the player gets the correct answer', function() {
