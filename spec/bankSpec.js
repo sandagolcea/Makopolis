@@ -48,7 +48,7 @@ describe ("Bank", function() {
 
     it('cannot display same question twice', function() {
       bank.deleteQuestion(2);
-      expect(bank.questionBank.length).toEqual(8);
+      expect(bank.questionBank.length).toEqual(19);
     });
 
   });
