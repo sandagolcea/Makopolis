@@ -51,7 +51,6 @@ git clone https://github.com/lukeclewlow/Makopolis
 How to run our tests
 ----
 ```sh
-cd makopolis
 npm install
 grunt
 ```
@@ -67,7 +66,7 @@ Visit http://localhost:5000/
 
 Contributors
 ----
-Our team was made up of: [Sanda],[Huy],[Steph],[Oli] and myself!
+Our team was made up of: [Sanda], [Huy], [Steph], [Oli] and myself!
 [Sanda]:https://github.com/sandagolcea
 [Huy]:https://github.com/tekhuy
 [Steph]:https://github.com/stepholdcorn
