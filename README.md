@@ -38,9 +38,9 @@ MVP Requirements
 Enhancements
 ------------
 If we had more time to work on this project, the features we would like to have added would be:
-- [] Two player functionality using web sockets
-- [] The ability to ask questions that weren't multiple choice - real life coding problems
-- [] A more responsive web page that isn't affected by resizing
+- [ ] Two player functionality using web sockets
+- [ ] The ability to ask questions that weren't multiple choice - real life coding problems
+- [ ] A more responsive web page that isn't affected by resizing
 
 How to clone this repo
 ----
