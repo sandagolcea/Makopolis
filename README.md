@@ -9,11 +9,12 @@ Heroku (live)
 ------
 https://makopolis.herokuapp.com/
 
-Learning Objectives
+Objectives
 -----
 * Create an MVP in three days
 * Test Driven Development
 * Learning team skills
+* Learn about planning and design
 
 Technologies
 ----------
