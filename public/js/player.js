@@ -12,8 +12,6 @@ var Player = function(playerID){
   this.lastVisitedSquare = 1;
  };
 
-
- 
  Player.prototype.move = function(diceRoll) {
   console.log("Last visited square: "+this.lastVisitedSquare);
   var start = this.lastVisitedSquare;
@@ -42,7 +40,6 @@ var Player = function(playerID){
       { crSpline: $.crSpline.buildSequence([ [stop,middle], [400,middle] ]) }, 5000);
   };
  };
-
 
  Player.prototype.calculateIconPosition = function(squareID) {
   var square = document.getElementById(squareID);
