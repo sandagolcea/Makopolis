@@ -11,7 +11,6 @@ module.exports = function(grunt) {
    },
    express: {
      options: {
-       script: './server.js',
        port: '5000'
      },
      dev: {
@@ -31,8 +30,35 @@ module.exports = function(grunt) {
        }
      }
    },
+   jasmine: {
+            all: {
+                src: [
+                    'public/js/**/*.js',
+                ],
+                options: {
+                    'vendor': 'lib/jasmine-2.1.3/**/*.js',
+                    'specs': 'spec/**/*.js'
+                }
+            },
+            istanbul: {
+              src: '<%= jasmine.all.src %>',
+              options: {
+                  vendor: '<%= jasmine.all.options.vendor %>',
+                  specs: '<%= jasmine.all.options.specs %>',
+                  template: require('grunt-template-jasmine-istanbul'),
+                  templateOptions: {
+                      coverage: 'coverage/json/coverage.json',
+                      report: [
+                          {type: 'html', options: {dir: 'coverage/html'}},
+                          {type: 'text-summary'}
+                      ]
+                  }
+                }
+            }
+        },
+  
    jasmine_node: {
-     all: ['spec/']
+     all: ['spec/*.js']
    },
    jshint: {
      all: ['Gruntfile.js', 'spec/**/*.js', 'js/**/*.js']
@@ -40,24 +66,16 @@ module.exports = function(grunt) {
    watch: {
      all: ['<%= jshint.files %>'],
      tasks: ['jshint']
-   },
-   jasmine: {
-    coverage : {
-    output : 'junit/coverage/',
-    reportType : 'cobertura',
-    excludes : ['lib/**/*.js']    
-      }
-    }
+   }
  });
 
-
-
  grunt.loadNpmTasks('grunt-contrib-jshint');
+ grunt.loadNpmTasks('grunt-contrib-jasmine');
+ grunt.loadNpmTasks('grunt-contrib-watch');
  grunt.loadNpmTasks('grunt-jasmine-node');
  grunt.loadNpmTasks('grunt-mocha-casperjs');
  grunt.loadNpmTasks('grunt-express-server');
- grunt.loadNpmTasks('grunt-jasmine-coverage');
-
- grunt.registerTask('default', ['jshint', 'express', 'mocha_casperjs']);
+ grunt.registerTask('default', ['express:test', 'jasmine', 'mocha_casperjs']);
  grunt.registerTask('hint', ['jshint']);
+ grunt.registerTask('jasmine-node', ['jasmine_node']);
 };
