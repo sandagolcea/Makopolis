@@ -14,23 +14,23 @@ describe ("Bank", function() {
     });
 
     it('should be able to provide the first answer choice', function() {
-      bank.questions(1);
-      expect(bank.choice1(1)).toEqual('array.inject');
+      // bank.questions(1);
+      expect(bank.choice(1, 0)).toEqual('array.inject');
     });
 
     it('should be able to provide the second answer choice', function() {
       bank.questions(1);
-      expect(bank.choice2(1)).toEqual('array.select{|number| number + number}/array');
+      expect(bank.choice(1, 1)).toEqual('array.select{|number| number + number}/array');
     });
 
     it('should be able to provide the third answer choice', function() {
       bank.questions(1);
-      expect(bank.choice3(1)).toEqual('(array.inject(:+)/array.length.to_f).round');
+      expect(bank.choice(1, 2)).toEqual('(array.inject(:+)/array.length.to_f).round');
     });
 
     it('should be able to provide the fourth answer choice', function() {
       bank.questions(1);
-      expect(bank.choice4(1)).toEqual('(array.join)/array');
+      expect(bank.choice(1, 3)).toEqual('(array.join)/array');
     });
 
     it('should be able to provide THE answer', function() {

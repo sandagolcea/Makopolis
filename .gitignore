@@ -3,3 +3,5 @@ node_modules
 lib/
 lib
 lib/*
+coverage/html/js/*
+coverage/json/*
