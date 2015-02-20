@@ -27,7 +27,7 @@ body {
         Squares
 **************************/
 
-.square {
+square {
   height:80px;
   width:80px;
   border-radius:5px;
@@ -200,13 +200,11 @@ h3 {
   width: 18em;
   height: 24em;
   background-color: #ffffc2;
-  /*margin-right: 5em;*/
 	display: block;
 	max-width: 20%;
 	border: solid #99EBD3 1.2em;
   border-radius: 2em;
 	display: none;
-  /*text-align: center;*/
   list-style: none;
 }
 

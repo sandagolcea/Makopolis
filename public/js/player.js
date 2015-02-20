@@ -16,7 +16,7 @@ var Player = function(playerID){
   console.log("Last visited square: "+this.lastVisitedSquare);
   var start = this.lastVisitedSquare;
   var end = diceRoll + start - 1;
-  var last = $('.square').length;
+  var last = $('square').length;
   end = end > last ? last : end;
 
   for(var i = start; i <= end; i++) {
@@ -32,7 +32,7 @@ var Player = function(playerID){
  };
 
  Player.prototype.checkWinner = function() {
-  if ( this.lastVisitedSquare >= $('.square').length )  {
+  if ( this.lastVisitedSquare >= $('square').length )  {
     // alert("You have won the game! Congratulations, your life is now complete!");
     stop = $(window).width()-400;
     middle = $(window).height() / 2 ;

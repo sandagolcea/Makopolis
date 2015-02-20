@@ -33,28 +33,10 @@ Bank.prototype.questions = function(questionNumber){
  return questionArray[0];
 };
 
-Bank.prototype.choice1 = function(questionNumber){
- var questionArray = this.questionBank[questionNumber];
- var questionArrayChoice = questionArray[1];
- return questionArrayChoice[0];
-};
-
-Bank.prototype.choice2 = function(questionNumber){
- var questionArray = this.questionBank[questionNumber];
- var questionArrayChoice = questionArray[1];
- return questionArrayChoice[1];
-};
-
-Bank.prototype.choice3 = function(questionNumber){
- var questionArray = this.questionBank[questionNumber];
- var questionArrayChoice = questionArray[1];
- return questionArrayChoice[2];
-};
-
-Bank.prototype.choice4 = function(questionNumber){
- var questionArray = this.questionBank[questionNumber];
- var questionArrayChoice = questionArray[1];
- return questionArrayChoice[3];
+Bank.prototype.choice = function(questionNumber, choiceNumber){
+   var questionArray = this.questionBank[questionNumber]
+   var questionArrayChoice = questionArray[1];
+   return questionArrayChoice[choiceNumber];
 };
 
 Bank.prototype.correctAnswer = function(questionNumber){

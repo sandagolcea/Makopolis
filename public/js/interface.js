@@ -9,10 +9,10 @@ $(document).ready(function() {
    $(this).text(dice.rollDice());
    $(bank.randomChecker());
    $('#question-text').text(bank.questions(1));
-   $('#answer1').val(bank.choice1(1));
-   $('#answer2').val(bank.choice2(1));
-   $('#answer3').val(bank.choice3(1));
-   $('#answer4').val(bank.choice4(1));
+   $('#answer1').val(bank.choice(1, 0));
+   $('#answer2').val(bank.choice(1, 1));
+   $('#answer3').val(bank.choice(1, 2));
+   $('#answer4').val(bank.choice(1, 3));
  });
 
  $('#question-text').text(bank.questions(1));
