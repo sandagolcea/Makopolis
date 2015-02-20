@@ -14,43 +14,41 @@
 <body>
   <img id='mario' src="sonic.svg.png"/>
   <img id='endBanner' src="banner.svg"/>
-  <!-- Behold the squares!! -->
-  <div class="square" id="sq1"><h3>1</h3></div>
-  <div class="square" id="sq2"><h3>2</h3></div>
-  <div class="square" id="sq3"><h3>3</h3></div>
-  <div class="square" id="sq4"><h3>4</h3></div>
-  <div class="square" id="sq5"><h3>5</h3></div>
-  <div class="square" id="sq6"><h3>6</h3></div>
-  <div class="square" id="sq7"><h3>7</h3></div>
-  <div class="square" id="sq8"><h3>8</h3></div>
-  <div class="square" id="sq9"><h3>9</h3></div>
-  <div class="square" id="sq10"><h3>10</h3></div>
-  <div class="square" id="sq11"><h3>11</h3></div>
-  <div class="square" id="sq12"><h3>12</h3></div>
-  <div class="square" id="sq13"><h3>13</h3></div>
-  <div class="square" id="sq14"><h3>14</h3></div>
-  <div class="square" id="sq15"><h3>15</h3></div>
-  <div class="square" id="sq16"><h3>16</h3></div>
-  <div class="square" id="sq17"><h3>17</h3></div>
-  <div class="square" id="sq18"><h3>18</h3></div>
-  <div class="square" id="sq19"><h3>19</h3></div>
-  <div class="square" id="sq20"><h3>20</h3></div>
-  <div class="square" id="sq21"><h3>FINISH</h3></div>
-  <!-- End of squares -->
 
-    <ul id="question-answers">
-      <h3 id="question-text"></h3>
-        <li><input type="button" class="qs" id="answer1" name="a1" value=""></li>
-        <li><input type="button" class="qs" id="answer2" name="a2" value=""></li>
-        <li><input type="button" class="qs" id="answer3" name="a3" value=""></li>
-        <li><input type="button" class="qs" id="answer4" name="a4" value=""></li>
-    </ul>
+  <square id="sq1"><h3>1</h3></square>
+  <square id="sq2"><h3>2</h3></square>
+  <square id="sq3"><h3>3</h3></square>
+  <square id="sq4"><h3>4</h3></square>
+  <square id="sq5"><h3>5</h3></square>
+  <square id="sq6"><h3>6</h3></square>
+  <square id="sq7"><h3>7</h3></square>
+  <square id="sq8"><h3>8</h3></square>
+  <square id="sq9"><h3>9</h3></square>
+  <square id="sq10"><h3>10</h3></square>
+  <square id="sq11"><h3>11</h3></square>
+  <square id="sq12"><h3>12</h3></square>
+  <square id="sq13"><h3>13</h3></square>
+  <square id="sq14"><h3>14</h3></square>
+  <square id="sq15"><h3>15</h3></square>
+  <square id="sq16"><h3>16</h3></square>
+  <square id="sq17"><h3>17</h3></square>
+  <square id="sq18"><h3>18</h3></square>
+  <square id="sq19"><h3>19</h3></square>
+  <square id="sq20"><h3>20</h3></square>
+  <square id="sq21"><h3>FINISH</h3></square>
 
-  <div id="dice-container">
-    <div id="dice">Dice</div>
-  </div>
+  <ul id="question-answers">
+    <h3 id="question-text"></h3>
+      <li><input type="button" class="qs" id="answer1" name="a1" value=""></li>
+      <li><input type="button" class="qs" id="answer2" name="a2" value=""></li>
+      <li><input type="button" class="qs" id="answer3" name="a3" value=""></li>
+      <li><input type="button" class="qs" id="answer4" name="a4" value=""></li>
+  </ul>
 
-  <!-- Our javascripts -->
+  <section id="dice-container">
+    <section id="dice">Dice</section>
+  </section>
+
   <script type="text/javascript" src="../jquery.js"></script>
   <script type="text/javascript" src="../jquery.crSpline.js"></script>
   <!-- Added socket js file and script for connecting (only) locally-->
@@ -58,7 +56,7 @@
   <script>
     var socket = io();
     var playerID;
-    
+
     socket.on('newPlayer', function (data) {
       console.log(data);
     });
@@ -71,8 +69,8 @@
   </script>
   <script type="text/javascript" src="../js/dice.js"></script>
   <script type="text/javascript" src="../js/bank.js"></script>
-  <script type="text/javascript" src="../js/player.js"></script> 
-  <script type="text/javascript" src="../js/interface.js"></script> 
+  <script type="text/javascript" src="../js/player.js"></script>
+  <script type="text/javascript" src="../js/interface.js"></script>
 
 </body>
 </html>
