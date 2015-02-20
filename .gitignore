@@ -5,5 +5,3 @@ lib
 lib/*
 coverage/html/js/*
 coverage/json/*
-
-README.md
