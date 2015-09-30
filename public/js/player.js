@@ -4,7 +4,7 @@ var Player = function(playerID){
   var x = pos[0];
   var y = pos[1];
   // put the icon on the first square
-  this.id = "#"+playerID;
+  this.id = "#"+playerID;  
   $(this.id).hide();
   $(this.id).css("top", y);
   $(this.id).css("left", x);
@@ -16,15 +16,20 @@ var Player = function(playerID){
   console.log("Last visited square: "+this.lastVisitedSquare);
   var start = this.lastVisitedSquare;
   var end = diceRoll + start - 1;
-  var last = $('square').length;
+  var last = $('.square').length;
   end = end > last ? last : end;
+  
+  console.log("End: " + end);
 
   for(var i = start; i <= end; i++) {
     var that = this;
+
+    console.log("animating position: " + i);
     $(this.id).animate(
       { crSpline: $.crSpline.buildSequence([ this.calculateIconPosition('sq' + i), this.calculateIconPosition('sq' + (i + 1)) ]) },
     500, function(){
-        that.lastVisitedSquare++;
+        that.lastVisitedSquare = i + 1;
+        console.log("new last visited square " + that.lastVisitedSquare);
         that.checkWinner();
       }
     );
@@ -32,14 +37,14 @@ var Player = function(playerID){
  };
 
  Player.prototype.checkWinner = function() {
-  if ( this.lastVisitedSquare >= $('square').length )  {
-    // alert("You have won the game! Congratulations, your life is now complete!");
-    stop = $(window).width()-400;
-    middle = $(window).height() / 2 ;
-    $('#endBanner').animate(
-      { crSpline: $.crSpline.buildSequence([ [stop,middle], [400,middle] ]) }, 5000);
+  if ( this.lastVisitedSquare >= $('.square').length )  {
+    alert("You have won the game! Congratulations, your life is now complete!");
   };
  };
+
+ Player.prototype.lastVisit = function() {
+  return this.lastVisitedSquare;
+ }
 
  Player.prototype.calculateIconPosition = function(squareID) {
   var square = document.getElementById(squareID);
